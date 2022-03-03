@@ -1,0 +1,33 @@
+package helloworld;
+
+public class helloworld {
+	public static void main(String[] args) {
+		int[] prime = calculation(20, 200, 300);
+		for (int i = 0; i < prime.length; i++) {
+			if (prime[i] != 0) {
+				if (i % 10 == 0 && i != 0)
+					System.out.println();
+				System.out.print(prime[i] + " ");
+			}
+		}
+
+	}
+	
+	public static int[] calculation(int length, int start, int end) {
+		int j,step = 0;
+		int[] prime = new int[length];
+		
+		for (int i = start; i <= end; i++){
+			j = 2;
+			while (i % j != 0) {
+				j++;
+			}
+			
+			if (j == i){
+				prime[step] = i;
+				step++;
+			}
+		}
+		return prime;
+	}
+}
